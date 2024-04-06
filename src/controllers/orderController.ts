@@ -7,7 +7,7 @@ export const postOrderHistory = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { sequence } = req.body;
+  const { sequence }: { sequence: number[] } = req.body;
 
   if (typeof sequence === 'object' && sequence.length > 0) {
     try {
@@ -34,7 +34,7 @@ export const getRecommendations = async (req: Request, res: Response): Promise<v
 
     const transformedRecommendations = recommendations.map(recommendations => ({
       sequence: getOriginalSequence(recommendations.subsequences),
-      ...recommendations.toObject(),
+      ...recommendations.toObject()
     }));
 
     res.json(transformedRecommendations);

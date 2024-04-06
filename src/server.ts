@@ -11,7 +11,6 @@ app.use(express.json());
 app.use('/api/orders', orderRoutes);
 app.use('/api', authRoutes);
 
-
 void connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
