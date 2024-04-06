@@ -3,17 +3,18 @@
         "es2021": true,
         "node": true
     },
-    "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
-    "overrides": [
-    ],
+    "extends": ["eslint-config-love"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "rules":  {
+        "semi": ["error", "always"],
+        "@typescript-eslint/semi": ["error", "always"],
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-misused-promises": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
     },
     "ignorePatterns": ["dist/"]
 }
