@@ -1,5 +1,5 @@
 # Usar la imagen oficial de Node.js como imagen base
-FROM node:14 AS builder
+FROM node:16 AS builder
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Iniciar una nueva fase para mantener la imagen lo más limpia y pequeña posible
-FROM node:14
+FROM node:16
 
 WORKDIR /usr/src/app
 
@@ -32,4 +32,4 @@ COPY --from=builder /usr/src/app/dist ./dist
 EXPOSE 3000
 
 # Comando para ejecutar la aplicación
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/server.js"]
