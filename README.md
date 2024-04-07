@@ -44,3 +44,39 @@ Before you begin, ensure you have met the following requirements:
     docker-compose down
    ```
 
+# API Usage
+
+This section covers the available endpoints within the API, including details on their usage and the data they expect or return.
+
+## Authentication
+
+- **Endpoint**: `POST /api/auth`
+- **Description**: This endpoint is used to obtain a JWT (JSON Web Token) for authenticating subsequent requests to the API.
+- **Payload**: None required.
+- **Returns**: A JWT token that should be included in the header of subsequent requests.
+
+## Order History
+
+- **Endpoint**: `POST /api/orders/history`
+- **Description**: Save a list of order histories. This endpoint expects a JSON payload with a specific structure.
+- **Payload**:
+  ```json
+  {
+    "sequence": [1, 2, 3]
+  }
+  ```
+
+## Order Recommendations
+
+- **Endpoint**: `GET /api/orders/recommendations`
+- **Description**: Retrieve product recommendations based on the user's order history and the original order history lis.
+- **Payload**: None required.
+- **Returns**: A list of product recommendations and the original order history list.
+   
+
+## Test coverage
+
+<img width="1439" alt="Captura de Pantalla 2024-04-07 a las 11 19 35 p  m" src="https://github.com/gaxxrodri/BM_node-app-backend/assets/76969924/6c749cd2-d487-46d8-80c5-59d555121b6d">
+
+   
+
