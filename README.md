@@ -44,4 +44,3 @@ Before you begin, ensure you have met the following requirements:
     docker-compose down
    ```
 
-## Usage
